@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>☕ Welcome to Coffee Haven</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f4f1ea;
+      color: #3e2723;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: #301a1a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo span {
+      color: #d7ccc8;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #d7ccc8;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 50px;
+      background-color: #8d6e63;
+      color: #fff1cb;
+    }
+
+    .hero-content {
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      font-family: 'Pacifico', cursive;
+      font-weight: bold;
+      color: #e8d3b3;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content .btn {
+      padding: 10px 20px;
+      background-color: #3e2723;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-content .btn:hover {
+      background-color: #5d4037;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Quotes Section */
+    .quotes {
+      padding: 50px;
+      background-color: #d7ccc8;
+      text-align: center;
+    }
+
+    .quotes h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .quotes p {
+      font-size: 20px;
+      font-style: italic;
+      color: #5d4037;
+    }
+
+    /* Menu Section */
+    .menu {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .menu h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .menu-items {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .menu-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    .menu-item img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .menu-item h3 {
+      font-size: 24px;
+      margin: 15px 0;
+    }
+
+    .menu-item p {
+      font-size: 16px;
+      color: #5d4037;
+    }
+
+    .menu-item .price {
+      font-size: 20px;
+      font-weight: 600;
+      color: #3e2723;
+    }
+
+    .menu-item .rating {
+      color: #ffc107;
+      font-size: 18px;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      padding: 50px;
+      background-color: #fff1cb;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .testimonial-items {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-item p {
+      font-size: 16px;
+      color: #5d4037;
+    }
+
+    .testimonial-item .name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #3e2723;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px;
+      background-color: #d7ccc8;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact form input,
+    .contact form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact form button {
+      padding: 10px 20px;
+      background-color: #3e2723;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact form button:hover {
+      background-color: #5d4037;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      padding: 50px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .gallery-items {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .gallery-item {
+      width: 30%;
+      margin-bottom: 20px;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #5d4037;
+      color: #fff;
+      margin-top: 50px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-image {
+        margin-top: 20px;
+      }
+
+      .menu-item, .testimonial-item, .gallery-item {
+        width: 100%;
+      }
+
+      .contact form {
+        padding: 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      Coffee <span>Haven</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Coffee Haven</h1>
+      <p class="hero-text">Experience the finest coffee in town.</p>
+      <a href="#menu" class="btn">Explore Menu</a>
+    </div>
+    <div class="hero-image">
+      <img src="coffee-hero-section.png" alt="3D Coffee Image">
+    </div>
+  </section>
+
+  <!-- Quotes Section -->
+  <section class="quotes">
+    <h2>What Our Customers Say</h2>
+    <p>"Coffee is a language in itself." – Jackie Chan</p>
+    <p>"Life begins after coffee." – Gayathri</p>
+    <p>"Espresso yourself." – Gayathri</p>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu" id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="menu-item">
+        <img src="Espressos!.jpeg" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>A strong shot of coffee to kickstart your day.</p>
+        <p class="price">₹120</p>
+        <p class="rating">★★★★★</p>
+      </div>
+      <div class="menu-item">
+        <img src="28 Different Types of Coffee You Drink Daily.jpeg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Perfectly balanced with espresso, steamed milk, and foam.</p>
+        <p class="price">₹150</p>
+        <p class="rating">★★★★☆</p>
+      </div>
+      <div class="menu-item">
+        <img src="How to Make a Latte.jpeg" alt="Latte">
+        <h3>Latte</h3>
+        <p>Smooth and creamy with a shot of espresso and steamed milk.</p>
+        <p class="price">₹160</p>
+        <p class="rating">★★★★★</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-items">
+      <div class="testimonial-item">
+        <img src="arshad.jpg" alt="Customer 1">
+        <p>"The best coffee I've ever had! Highly recommend the latte."</p>
+        <p class="name">- Arshad</p>
+      </div>
+      <div class="testimonial-item">
+        <img src="sri.jpg" alt="Customer 2">
+        <p>"Amazing atmosphere and great service. Love this place!"</p>
+        <p class="name">- Sri</p>
+      </div>
+      <div class="testimonial-item">
+        <img src="rajeswari.jpg" alt="Customer 3">
+        <p>"Their espresso is perfect. I come here every morning."</p>
+        <p class="name">- Rajeswari</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-items">
+      <div class="gallery-item">
+        <img src="outlook.png" alt="Coffee Shop">
+      </div>
+      <div class="gallery-item">
+        <img src="ambience.png" alt="Coffee Shop">
+      </div>
+      <div class="gallery-item">
+        <img src="cutsomers.png" alt="Coffee Shop">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Coffee Haven. All rights reserved.</p>
+  </footer>
+</body>
+</html>
